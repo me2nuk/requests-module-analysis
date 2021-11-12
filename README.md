@@ -123,22 +123,8 @@ requests
     ```
 
 + api.py
-   
-    api.py은 requests 모듈의 requests.get, requests.post 등 다양한 요청 api를 사용하기 위해 함수들이 정의되어있는 파일입니다.
-    <br />api.py파일 내에서 새로운 함수를 정의하기 보단, 다른 모듈에서 정의된 함수를 가져와 사용자가 사용하기 편리한 방식으로 변환해줍니다. 
 
-    ```py
-    from . import sessions //sessions 모듈에서 .auth/.cookies/.models/.utils 등 기능을 불러온다.
-    def request(method, url, **kwargs): // request함수를 method(POST/GET), url(http://naver.com), **kwargs(기능X, 추가로 더 들어올 인자) 파라미터를 사용한다.
-      with sessions.Session() as session:
-         return session.request(method=method, url=url, **kwargs)
-         
-    def get(url, params=None, **kwargs): // GET메소드를 사용하여 request한다.
-      return request('get', url, params=params, **kwargs)
-      
-    def post(url, data=None, json=None, **kwargs): // POST메소드를 사용하여 request한다. json데이터도 삽입할 수 있다.
-      return request('post', url, data=data, json=json, **kwargs)
-    이 외에도 patch, delete 등의 함수가 정의되어 있다.
+    api.py은 requests 모듈의 requests.get, requests.post 등 다양한 요청 api를 사용하기 위해 함수들이 정의되어있는 파일입니다.
 
     ```
     requests.api
@@ -199,14 +185,14 @@ requests
     ```
 
 + exceptions.py
+
+    exceptions.py은 다양한 예외 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
+    
     ```
     requests.exceptions
-    
     ~~~~~~~~~~~~~~~~~~~
-
-    exceptions.py is provided for dealing with several exceptional situations to announce users. 
     
-    exceptions.py은 다양한 예외상황을 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
+    This module contains the set of Requests' exceptions.
     ```
     
     + InvalidJSONError : A JSON error occurred.
@@ -233,4 +219,87 @@ requests
     + FileModeWarning : A file was opened in text mode, but Requests determined its binary length.
     + RequestsDependencyWarning : An imported dependency doesn't match the expected version range.
 
++ help.py
+
+    help.py은 버그 리포트를 도와주는 모듈이 있는 입니다.
+    ```
+    Module containing bug report helper(s).
+    ```
+
++ hooks.py
     
+    hooks.py은 reqeuests hook 시스템을 위한 기능을 제공하는 파일입니다.
+    
+    ```
+    requests.hooks
+    ~~~~~~~~~~~~~~
+    This module provides the capabilities for the Requests hooks system.
+    Available hooks:
+    ``response``:
+        The response generated from a Request.
+    ```
+    
++ models.py
+    
+    models.py은 Requests에 대한 주요 객체를 포함하는 파일입니다.
+    
+    ```
+    requests.models
+    ~~~~~~~~~~~~~~~
+    This module contains the primary objects that power Requests.
+    ```
+
++ packages.py
+
+    packages.py은 이전 버전과의 호환성을 위한 파일입니다.
+    ```
+    This code exists for backwards compatibility reasons.
+    ```
++ sessions.py
+
+    sessions.py은 세션을 유지관리하기 위한 파일입니다.
+    ```
+    requests.sessions
+    ~~~~~~~~~~~~~~~~~
+    This module provides a Session object to manage and persist settings across
+    requests (cookies, auth, proxies).
+    ```
+    
++ status_codes.py
+ 
+    status_codes.py은 HTTP status code에 대한 매핑을 해주는 파일입니다.
+    ```
+    The ``codes`` object defines a mapping from common names for HTTP statuses
+    to their numerical codes, accessible either as attributes or as dictionary
+    items.
+    Example::
+        >>> import requests
+        >>> requests.codes['temporary_redirect']
+        307
+        >>> requests.codes.teapot
+        418
+        >>> requests.codes['\o/']
+        200
+    Some codes have multiple names, and both upper- and lower-case versions of
+    the names are allowed. For example, ``codes.ok``, ``codes.OK``, and
+    ``codes.okay`` all correspond to the HTTP status code 200.
+    ```
+    
++ structures.py
+
+    structures.py은 Requests에 대한 데이터 구조를 포함하는 파일입니다.
+    ```
+    requests.structures
+    ~~~~~~~~~~~~~~~~~~~
+    Data structures that power Requests.
+    ```
+    
++ utils.py
+
+    utils.py은 모듈 내에서 사용되는 유틸리티 기능을 제공하는 파일입니다.
+    ```
+    requests.utils
+    ~~~~~~~~~~~~~~
+    This module provides utility functions that are used within Requests
+    that are also useful for external consumption.
+    ```
