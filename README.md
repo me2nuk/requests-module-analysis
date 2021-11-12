@@ -187,6 +187,32 @@ requests
 + exceptions.py
 
     exceptions.py은 다양한 예외 처리하기 위한 파일입니다.
+    예외처리 목록은 다음과 같습니다.
+    
+    InvalidJSONError : A JSON error occurred.
+    JSONDecodeError : Couldn't decode the text into json
+    HTTPError : An HTTP error occurred.
+    ConnectionError : A Connection error occurred.
+    ProxyError : A proxy error occurred.
+    SSLError : An SSL error occurred.
+    Timeout : 
+    ConnectTimeout : The request timed out while trying to connect to the remote server. Requests that produced this error are safe to retry.
+    ReadTimeout : The server did not send any data in the allotted amount of time.
+    URLRequired : A valid URL is required to make a request
+    TooManyRedirects :  Too many redirects.
+    MissingSchema : The URL schema (e.g. http or https) is missing.
+    InvalidSchema : See defaults.py for valid schemas.
+    InvalidURL : The URL provided was somehow invalid.
+    InvalidHeader : The header value provided was somehow invalid.
+    InvalidProxyURL : The proxy URL provided is invalid.
+    ChunkedEncodingError : The server declared chunked encoding but sent an invalid chunk.
+    ContentDecodingError : Failed to decode response content.
+    StreamConsumedError : The content for this response was already consumed.
+    RetryError : Custom retries logic failed
+    UnrewindableBodyError : Requests encountered an error when trying to rewind a body.
+    RequestsWarning : Base warning for Requests.
+    FileModeWarning : A file was opened in text mode, but Requests determined its binary length.
+    RequestsDependencyWarning : An imported dependency doesn't match the expected version range.
 
     ```
     requests.exceptions
