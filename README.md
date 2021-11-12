@@ -2,7 +2,6 @@
 
 ## requests 모듈이란?
 
----
 
 간단하게 requests 모듈은 HTTP REQUEST / RESPONSE 기능을 사용할 수 있는 모듈입니다.
 
@@ -58,7 +57,7 @@ head = requests.head
 
 ## requests 모듈 분석
 
-먼저 requests 모듈의 파일 구조는 이렇게 됩니다.
+먼저 requests 모듈의 파일 구조는 이렇게 구성되어 있습니다.
 
 ```
 requests
@@ -81,7 +80,7 @@ requests
    └── utils.py
 ```
 
-+ \_\_version__
++ `\_\_version__`
 
     requests 모듈에 관한 버전과 requests 문서 링크 등 다양한 정보가 있는 파일입니다.
 
@@ -98,7 +97,7 @@ requests
     __cake__ = u'\u2728 \U0001f370 \u2728'
     ```
 
-+ _internal_utils.py
++ `_internal_utils.py`
 
     _internal_utils.py은 유니코드 문자열 ascii 문자 체크,  ascii 인코딩 정도의 유틸리티 기능을 제공하는 파일입니다.
 
@@ -110,7 +109,7 @@ requests
     which depend on extremely few external helpers (such as compat)
     ```
 
-+ adapters.py
++ `adapters.py`
 
     adapters.py은 requests 모듈을 사용하면서 요청과 연결을 유지하는 코드 등 요청하는 핵심적인 코드가 포함되어있는 파일입니다.
 
@@ -122,7 +121,7 @@ requests
     and maintain connections.
     ```
 
-+ api.py
++ `api.py`
 
     api.py은 requests 모듈의 requests.get, requests.post 등 다양한 요청 api를 사용하기 위해 함수들이 정의되어있는 파일입니다.
 
@@ -133,7 +132,7 @@ requests
     This module implements the Requests API.
     ```
 
-+ auth.py
++ `auth.py`
 
     auth.py은 예시로 Authorization 같은 헤더를 구축하기 위한 즉 요청에 대한 인증을 처리하는 파일입니다.
 
@@ -144,7 +143,7 @@ requests
     This module contains the authentication handlers for Requests.
     ```
 
-+ certs.py
++ `certs.py`
 
     certs.py은 CA인증서 관련 처리하기 위한 파일입니다.
 
@@ -160,7 +159,7 @@ requests
     packaged CA bundle.
     ```
 
-+ compat.py
++ `compat.py`
 
     compat.py은 python2와 python3 간의 호환성 문제를 처리하는 파일입니다.
 
@@ -171,7 +170,7 @@ requests
     This module handles import compatibility issues between Python 2 and Python 3.
     ```
 
-+ cookies.py
++ `cookies.py`
 
     cookies.py은 요청과 동시에 cookielib.CookieJar를 사용할 수 있는 호환성 코드가 있는 파일입니다.
 
@@ -184,7 +183,7 @@ requests
     requests.utils imports from here, so be careful with imports.
     ```
 
-+ exceptions.py
++ `exceptions.py`
 
     exceptions.py은 다양한 예외 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
     
@@ -219,14 +218,14 @@ requests
     + FileModeWarning : A file was opened in text mode, but Requests determined its binary length.
     + RequestsDependencyWarning : An imported dependency doesn't match the expected version range.
 
-+ help.py
++ `help.py`
 
-    help.py은 버그 리포트를 도와주는 모듈이 있는 입니다.
+    help.py은 버그 리포트를 도와주는 모듈이 있는 파일입니다.
     ```
     Module containing bug report helper(s).
     ```
 
-+ hooks.py
++ `hooks.py`
     
     hooks.py은 reqeuests hook 시스템을 위한 기능을 제공하는 파일입니다.
     
@@ -239,7 +238,7 @@ requests
         The response generated from a Request.
     ```
     
-+ models.py
++ `models.py`
     
     models.py은 Requests에 대한 주요 객체를 포함하는 파일입니다.
     
@@ -249,13 +248,13 @@ requests
     This module contains the primary objects that power Requests.
     ```
 
-+ packages.py
++ `packages.py`
 
     packages.py은 이전 버전과의 호환성을 위한 파일입니다.
     ```
     This code exists for backwards compatibility reasons.
     ```
-+ sessions.py
++ `sessions.py`
 
     sessions.py은 세션을 유지관리하기 위한 파일입니다.
     ```
@@ -265,7 +264,7 @@ requests
     requests (cookies, auth, proxies).
     ```
     
-+ status_codes.py
++ `status_codes.py`
  
     status_codes.py은 HTTP status code에 대한 매핑을 해주는 파일입니다.
     ```
@@ -285,7 +284,7 @@ requests
     ``codes.okay`` all correspond to the HTTP status code 200.
     ```
     
-+ structures.py
++ `structures.py`
 
     structures.py은 Requests에 대한 데이터 구조를 포함하는 파일입니다.
     ```
@@ -294,7 +293,7 @@ requests
     Data structures that power Requests.
     ```
     
-+ utils.py
++ `utils.py`
 
     utils.py은 모듈 내에서 사용되는 유틸리티 기능을 제공하는 파일입니다.
     ```
