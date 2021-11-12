@@ -190,10 +190,15 @@ requests
     예외처리 목록은 다음과 같습니다.
     
     InvalidJSONError : A JSON error occurred.
-    JSONDecodeError : Couldn't decode the text into json
+    ------------
+    JSONDecodeError : Couldn't decode the text into json.
+    ------------
     HTTPError : An HTTP error occurred.
+    ------------
     ConnectionError : A Connection error occurred.
+    ------------
     ProxyError : A proxy error occurred.
+    ------------
     SSLError : An SSL error occurred.
     Timeout : 
     ConnectTimeout : The request timed out while trying to connect to the remote server. Requests that produced this error are safe to retry.
