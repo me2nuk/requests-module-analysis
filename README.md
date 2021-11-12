@@ -187,9 +187,11 @@ requests
 + exceptions.py
     ```
     requests.exceptions
+    
+    exceptions.py is provided for dealing with several exceptional situations to announce users. 
     ~~~~~~~~~~~~~~~~~~~
 
-    exceptions.py은 다양한 예외 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
+    exceptions.py은 다양한 예외상황을 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
     ```
     
     + InvalidJSONError : A JSON error occurred.
