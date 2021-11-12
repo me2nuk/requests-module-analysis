@@ -185,6 +185,12 @@ requests
     ```
 
 + exceptions.py
+    ```
+    requests.exceptions
+    ~~~~~~~~~~~~~~~~~~~
+
+    This module contains the set of Requests' exceptions.
+    ```
 
     exceptions.py은 다양한 예외 처리하기 위한 파일입니다.
     예외처리 목록은 다음과 같습니다.
@@ -214,9 +220,4 @@ requests
     + FileModeWarning : A file was opened in text mode, but Requests determined its binary length.
     + RequestsDependencyWarning : An imported dependency doesn't match the expected version range.
 
-    ```
-    requests.exceptions
-    ~~~~~~~~~~~~~~~~~~~
-
-    This module contains the set of Requests' exceptions.
-    ```
+    
