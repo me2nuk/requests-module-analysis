@@ -189,19 +189,15 @@ requests
     requests.exceptions
     ~~~~~~~~~~~~~~~~~~~
 
-    This module contains the set of Requests' exceptions.
+    exceptions.py은 다양한 예외 처리하기 위한 파일입니다.예외처리 목록은 다음과 같습니다.
     ```
-
-    exceptions.py은 다양한 예외 처리하기 위한 파일입니다.
-    예외처리 목록은 다음과 같습니다.
     
     + InvalidJSONError : A JSON error occurred.
     + JSONDecodeError : Couldn't decode the text into json.
     + HTTPError : An HTTP error occurred.
     + ConnectionError : A Connection error occurred.
     + ProxyError : A proxy error occurred.
-    + SSLError : An SSL error occurred.
-    + Timeout : 
+    + SSLError : An SSL error occurred. 
     + ConnectTimeout : The request timed out while trying to connect to the remote server. Requests that produced this error are safe to retry.
     + ReadTimeout : The server did not send any data in the allotted amount of time.
     + URLRequired : A valid URL is required to make a request
