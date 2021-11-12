@@ -125,7 +125,7 @@ requests
 + api.py
    
     api.py은 requests 모듈의 requests.get, requests.post 등 다양한 요청 api를 사용하기 위해 함수들이 정의되어있는 파일입니다.
-    api.py파일 내에서 새로운 함수를 정의하기 보단, 다른 모듈에서 정의된 함수를 가져와 사용자가 사용하기 편리한 방식으로 변환해줍니다. 
+    \napi.py파일 내에서 새로운 함수를 정의하기 보단, 다른 모듈에서 정의된 함수를 가져와 사용자가 사용하기 편리한 방식으로 변환해줍니다. 
 
     ```
     from . import sessions //sessions 모듈에서 .auth/.cookies/.models/.utils 등 기능을 불러온다.
