@@ -111,7 +111,10 @@ requests
 
 + `adapters.py`
 
-    adapters.py은 requests 모듈을 사용하면서 요청과 연결을 유지하는 코드 등 요청하는 핵심적인 코드가 포함되어있는 파일입니다.
+    adapters.py은 requests 모듈을 사용하는 데 있어 핵심적인 코드가 포함되어있는 파일입니다.
+    
+    urllib3에서 여러 모듈들을 불러온 후 모듈들을 이용해 헤더를 추가하고, 프록시 세팅, response build등 요청과 연결을 유지하는 코드와 클래스들이 정의되어 있습니다.
+
 
     ```
     requests.adapters
@@ -119,6 +122,20 @@ requests
 
     This module contains the transport adapters that Requests uses to define
     and maintain connections.
+    ```
+    
+    ```py
+    class BaseAdapter(object):
+       def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None): # ReadyRequest 오브젝트를 보냅니다.
+       def close(self): # adapter의 items를 정리합니다.
+       
+    class HTTPAdapter(BaseAdapter):
+      def cert_verify(self, conn, url, verify, cert): # SSL 인증서를 확인합니다.
+      def build_response(self, req, resp): # response class를 빌드합니다.
+      def get_connection(self, url, proxies=None): # 받은 url에 대한 rulib3에 대한 connection을 반환합니다.
+      def request_url(self, request, proxies): # 최종 request를 보낼 URL을 가져옵니다.
+      def add_headers(self, request, **kwargs): # 연결에 필요한 기본적인 header를 추가합니다.
+      def proxy_headers(self, proxy): # proxy를 통해 보낼 헤더들의 dictionary를 반환합니다.
     ```
 
 + `api.py`
