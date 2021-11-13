@@ -127,7 +127,7 @@ requests
     <br />api.py파일 내에서 새로운 함수를 정의하기 보단, 다른 모듈에서 정의된 함수를 가져와 사용자가 사용하기 편리한 방식으로 변환해줍니다. 
 
     ```py
-    from . import sessions # sessions 모듈에서 .auth/.cookies/.models/.utils 등 기능을 불러온다.
+    from . import sessions 
     def request(method, url, **kwargs): # request함수를 method(POST/GET), url(http://naver.com), **kwargs(기능X, 추가로 더 들어올 인자) 파라미터를 사용한다.
       with sessions.Session() as session:
          return session.request(method=method, url=url, **kwargs)
@@ -135,9 +135,23 @@ requests
     def get(url, params=None, **kwargs): # GET메소드를 사용하여 request한다.
       return request('get', url, params=params, **kwargs)
       
+    def options(url, **kwargs): # OPTIONS메소드를 사용하여 request한다.
+      return request('options', url, **kwargs)
+      
+    def head(url, **kwargs): # HEAD메소드를 사용하여 request한다.
+      return request('head', url, **kwargs)
+
     def post(url, data=None, json=None, **kwargs): # POST메소드를 사용하여 request한다. json데이터도 삽입할 수 있다.
       return request('post', url, data=data, json=json, **kwargs)
-    # 이 외에도 patch, delete 등의 함수가 정의되어 있다.
+      
+    def put(url, data=None, **kwargs): # PUT메소드를 사용하여 request한다.
+      return request('put', url, data=data, **kwargs)
+      
+    def patch(url, data=None, **kwargs): # PATCH메소드를 사용하여 request한다.
+      return request('patch', url, data=data, **kwargs)
+    
+    def delete(url, **kwargs): # DELETE메소드를 사용하여 reqeuest한다.
+      return request('delete', url, **kwargs)
     ```
 
 + `auth.py`
